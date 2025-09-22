@@ -64,11 +64,11 @@ jobs:
         uses: actions/upload-artifact@v4
         if: matrix.node == 22
         with:
-          name: prebuilt-binaries
+          name: prebuilt-binaries-${{ matrix.os }}-${{ matrix.target }}
           path: prebuilds/*
           retention-days: 7
 
       - name: Upload binaries to GitHub Release
-        run: npm upload --upload-all ${{ github.token }}
+        run: npm run upload --upload-all ${{ github.token }}
         if: matrix.node == 22 && startsWith(github.ref, 'refs/tags/')
 
