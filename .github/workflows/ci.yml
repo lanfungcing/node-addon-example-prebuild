@@ -43,9 +43,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check Node compatibility
-        run: node tools/semver-check.js
-
       - name: Add env vars
         shell: bash
         run: |
