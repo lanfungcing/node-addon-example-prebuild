@@ -1,0 +1,26 @@
+{
+    "name": "@fqlan/node-addon-example-prebuild",
+    "version": "0.0.1",
+    "description": "Hello world app packaged with prebuilds",
+    "main": "./index.js",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lanfungcing/node-addon-example-prebuild.git"
+    },
+
+    "dependencies": {
+        "prebuild-install": "^7.1.3",
+        "bindings": "^1.5.0",
+        "node-gyp": "^11.3.0"
+    },
+    "devDependencies": {
+         "prebuild": "13.0.0"
+    },
+    "scripts": {
+        "install": "prebuild-install -r napi || build",
+        "prebuild:custom": "prebuild --target 22.18.0",
+        "build": "node-gyp rebuild --target 22.18.0",
+        "test": "node index.js"
+    }
+}
