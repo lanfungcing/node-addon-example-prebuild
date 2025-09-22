@@ -20,8 +20,8 @@
          "prebuild": "13.0.0"
     },
     "scripts": {
-        "install": "prebuild-install -r napi || build",
-        "prebuild:custom": "prebuild",
+        "install": "prebuild-install -r napi || node-gyp rebuild",
+        "prebuild": "prebuild --runtime napi --all",
         "build": "node-gyp rebuild",
         "test": "node test.js"
     }
