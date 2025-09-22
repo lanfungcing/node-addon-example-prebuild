@@ -55,7 +55,7 @@ jobs:
           fi
 
       - name: Build binaries
-        run: npm prebuild -a ${{ env.TARGET }}
+        run: npm run prebuild -a ${{ env.TARGET }}
 
       - name: Run tests
         run: npm test
