@@ -22,8 +22,8 @@ jobs:
       matrix:
         os:
           #- macos-latest
-          #- ubuntu-24.04
-          - windows-latest
+          - ubuntu-24.04
+          #- windows-latest
         host:
           - x64
         target:
