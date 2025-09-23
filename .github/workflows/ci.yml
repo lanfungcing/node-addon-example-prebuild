@@ -8,6 +8,7 @@ on:
       # - main
 permissions:
   contents: write
+  actions: read
 env:
   FORCE_COLOR: 1
 concurrency:
@@ -20,8 +21,8 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-latest
-          - ubuntu-24.04
+          #- macos-latest
+          #- ubuntu-24.04
           - windows-latest
         host:
           - x64
@@ -29,11 +30,11 @@ jobs:
           - x64
         node:
           - 22
-        include:
-          - os: windows-latest
-            node: 22
-            host: x86
-            target: x86
+        #include:
+          #- os: windows-latest
+            #node: 22
+            #host: x86
+            #target: x86
     name: ${{ matrix.os }} (host=${{ matrix.host }}, target=${{ matrix.target }})
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -68,7 +69,7 @@ jobs:
         with:
           name: prebuilt-binaries-${{ matrix.os }}-${{ matrix.target }}
           path: prebuilds/*
-          retention-days: 7
+          retention-days: 1
 
       - name: Upload binaries to GitHub Release
         run: npm run upload --upload-all ${{ github.token }}
