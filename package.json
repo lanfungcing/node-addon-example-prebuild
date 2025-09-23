@@ -1,6 +1,6 @@
 {
     "name": "@fqlan/node-addon-example-prebuild",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Hello world app packaged with prebuilds",
     "main": "./index.js",
     "author": "",
