@@ -15,9 +15,9 @@
 		]
     },
 	"files": [
-		binding.gyp,
-		src/hello.c,
-		index.js
+		"binding.gyp",
+		"src/hello.c",
+		"index.js"
 	],
     "dependencies": {
         "prebuild-install": "^7.1.3",
